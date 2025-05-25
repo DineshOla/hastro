@@ -1,0 +1,757 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Header Section */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    background-color: white;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-left img {
+    height: 40px;
+    width: auto;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 100%;
+    height: 3px;
+    background-color: black;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.header-right {
+    display: flex;
+}
+
+.header-right ul {
+    display: flex;
+    list-style: none;
+}
+
+.header-right li {
+    margin-left: 20px;
+}
+
+.header-right ul li a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.header-right ul li a:hover {
+    color: #00bfff;
+}
+
+/* Hero Section */
+.hero {
+    background-color: rgb(62, 98, 199);
+    padding: 60px 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 600px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(62, 98, 199, 0.2), rgba(62, 98, 199, 0.1));
+    z-index: 1;
+}
+
+.hero-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    gap: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content {
+    flex: 1 1 400px;
+    color: white;
+    text-align: left;
+    animation: fadeIn 1s ease-out;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    animation: fadeIn 1.2s ease-out;
+}
+
+.hero-content-p-saving,
+.hero-content-p-price {
+    color: rgb(248, 131, 6);
+    font-weight: bold;
+}
+
+.hero-credit {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.hero-content-button {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.primary-cta {
+    background-color: rgb(248, 131, 6);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.primary-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero-content-button p {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.hero-image {
+    flex: 1 1 400px;
+    display: flex;
+    justify-content: flex-end;
+    animation: slideInRight 1s ease-out;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Section 1: Hosting Plans */
+.plans-section {
+    text-align: center;
+    padding: 50px 5%;
+    background: white;
+}
+
+.plans-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.plans {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.plan-card {
+    background-color: #ff8500;
+    color: white;
+    padding: 40px 25px;
+    border-radius: 10px;
+    width: 260px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.plan-card:hover {
+    transform: scale(1.1);
+}
+
+.plan-card img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.plan-card h3 {
+    margin: 15px 0 8px;
+    font-size: 1.4rem;
+}
+
+.plan-card p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.arrow {
+    font-size: 1.8rem;
+}
+
+/* Section 2: Features */
+.features-section {
+    background-color: #fef1e8;
+    padding: 60px 5%;
+}
+
+.features-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-box h3 {
+    color: #4b3de5;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+.feature-box p {
+    color: #333;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+/* Section 3: Support */
+.support-section {
+    padding: 80px 5%;
+    background-color: #fff;
+}
+
+.support-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.support-image {
+    flex: 1 1 400px;
+}
+
+.support-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.support-content {
+    flex: 1 1 400px;
+}
+
+.support-content h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.support-content p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.support-content .credit a {
+    text-decoration: underline;
+    color: #000;
+}
+
+.get-started {
+    background-color: #ff7900;
+    border: none;
+    padding: 12px 24px;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.contact-methods {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 60px auto 0;
+    border-top: 2px solid #f0a14b;
+    padding-top: 40px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.method {
+    text-align: center;
+    flex: 1 1 120px;
+    padding: 10px;
+}
+
+.method h4 {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.method p {
+    color: #f47216;
+    font-weight: 500;
+}
+
+.contact-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+/* Section 4: Pricing */
+.pricing-section {
+    background-color: #fef1e8;
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.pricing-title {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.pricing-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pricing-card {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    flex: 1 1 300px;
+    max-width: 320px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.plan-header {
+    background-color: #ff7900;
+    color: #fff;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.plan-price {
+    color: #3b2de1;
+    font-size: 40px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.plan-price span {
+    display: block;
+    font-size: 16px;
+    color: #3b2de1;
+    font-weight: normal;
+}
+
+.plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.plan-features-icon {
+    color: #ff7900;
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.plan-features-icon-x {
+    color: gray;
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.plan-features li {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.plan-button {
+    background-color: #3b2de1;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Section 5: Migrate */
+.migrate-section {
+    background: #ffffff;
+    padding: 80px 5%;
+}
+
+.migrate-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    gap: 20px;
+}
+
+.migrate-text {
+    flex: 1 1 400px;
+    max-width: 500px;
+    padding: 20px;
+}
+
+.migrate-text h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.migrate-text p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.credit {
+    font-size: 14px;
+}
+
+.credit a {
+    color: #ff7900;
+    text-decoration: none;
+}
+
+.migrate-button {
+    background-color: #ff7900;
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.migrate-image {
+    flex: 1 1 400px;
+    max-width: 500px;
+    padding: 20px;
+}
+
+.migrate-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+    .header {
+        padding: 10px 3%;
+    }
+
+    .header-right li {
+        margin-left: 15px;
+    }
+
+    .hero {
+        min-height: 500px;
+        padding: 40px 3%;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
+    .hero-content-button p {
+        font-size: 14px;
+    }
+
+    .hero-image img {
+        max-height: 350px;
+    }
+
+    .plans-section {
+        padding: 40px 3%;
+    }
+
+    .plan-card {
+        width: 220px;
+    }
+
+    .features-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .support-container {
+        gap: 15px;
+    }
+
+    .support-image img {
+        margin-left: 0;
+    }
+
+    .pricing-container {
+        gap: 20px;
+    }
+
+    .pricing-card {
+        flex: 1 1 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        position: relative;
+    }
+
+    .menu-toggle {
+        display: flex;
+        z-index: 1001;
+    }
+
+    .header-right {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: white;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .header-right.active {
+        display: block;
+    }
+
+    .header-right ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-right li {
+        margin: 10px 0;
+    }
+
+    .hero {
+        min-height: auto Moll;
+        padding: 30px 3%;
+    }
+
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        order: 1;
+        text-align: center;
+    }
+
+    .hero-image {
+        order: 2;
+        justify-content: center;
+    }
+
+    .hero-content-button {
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .primary-cta, .secondary-cta {
+        padding: 12px 24px;
+        width: 100%;
+        max-width: 200px;
+    }
+
+    .plans {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .plan-card {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .features-container {
+        grid-template-columns: 1fr;
+    }
+
+    .support-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .support-image {
+        order: 1;
+    }
+
+    .support-content {
+        order: 2;
+    }
+
+    .contact-methods {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .pricing-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .migrate-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .migrate-text {
+        order: 2;
+    }
+
+    .migrate-image {
+        order: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 28px;
+    }
+
+    .hero-subtitle {
+        font-size: 14px;
+    }
+
+    .hero-content-button p {
+        font-size: 12px;
+    }
+
+    .primary-cta, .secondary-cta {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .hero-image img {
+        max-height: 250px;
+    }
+
+    .plans-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .support-content h2 {
+        font-size: 24px;
+    }
+
+    .pricing-title {
+        font-size: 24px;
+    }
+
+    .plan-price {
+        font-size: 32px;
+    }
+
+    .migrate-text h2 {
+        font-size: 28px;
+    }
+}
